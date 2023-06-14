@@ -31,7 +31,7 @@ def getStory(title, postNum):
     prompt = random.choice(prompts)
   
 
-    openai.api_key = "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"
+    openai.api_key = "" # Replace with your api Key!
 
     start_sequence = "\nAI:"
     restart_sequence = "\nHuman: "
