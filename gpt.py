@@ -5,25 +5,16 @@ import random
 import env
 
 
-prompts = ["Tell me a very interesting and suspenseful story about a time when the unexpected happened",
-"Give me a very interesting and suspenseful story about an unusual coincidence",
-"Tell me a very interesting and suspenseful story about a time when someone's kindness made a difference",
-"Give me a very interesting and suspenseful story about an unexpected plot twist",
-"Tell me a very interesting and suspenseful story about an amazing accomplishment",
-"Give me a very interesting and suspenseful story about a scary or creepy experience",
-"Tell me a very interesting and suspenseful story about a time when someone overcame adversity",
-"Give me a very interesting and suspenseful story about a miraculous event",
-"Tell me a very interesting and suspenseful story about a near-death experience",
-"Give me a very interesting and suspenseful story about a surprising encounter with a stranger",
-"Tell me a very interesting and suspenseful story about an act of bravery or heroism",
-"Give me a very interesting and suspenseful story about a life-changing moment",
-"Tell me a very interesting and suspenseful story about a shocking revelation or secret",
-"Give me a very interesting and suspenseful story about an unexpected success or failure",
-"Tell me a very interesting and suspenseful story about a time when something inexplicable happened",
-"Give me a very interesting and suspenseful story about a humorous or embarrassing moment",
-"Tell me a very interesting and suspenseful story about a time when someone faced a difficult decision",
-"Give me a very interesting and suspenseful story about a moment of serendipity or luck",
-"Tell me a very interesting and suspenseful story about a time when someone went above and beyond to help another person"
+prompts = ["The following is a realistic, mysterious, and suspenseful story about a dilapidated bed and breakfast with a twisted secret",
+"The following is a realistic, mysterious, and suspenseful story about a possessed childhood toy that brings terror to its owner",
+"The following is a realistic, mysterious, and suspenseful story about a remote cabin in the woods that holds a dark and malevolent presence",
+"The following is a realistic, mysterious, and suspenseful story about a lost diary filled with sinister secrets that should have remained hidden",
+"The following is a realistic, mysterious, and suspenseful story about a cursed painting that brings madness and death to those who possess it",
+"The following is a realistic, mysterious, and suspenseful story about a secret underground tunnel inhabited by vengeful spirits with a thirst for souls",
+"The following is a realistic, mysterious, and suspenseful story about a haunted antique shop where every object holds a dark history and restless spirits roam",
+"The following is a realistic, mysterious, and suspenseful story about a series of unexplained disappearances linked to a sinister force lurking in the shadows",
+"The following is a realistic, mysterious, and suspenseful story about a hidden treasure that comes with a deadly curse, driving its seekers to madness and death",
+"The following is a realistic, mysterious, and suspenseful story about a long-lost twin who returns from the grave, seeking revenge on those who wronged them"
 ]
 
 
@@ -40,13 +31,13 @@ def getStory(title, postNum):
 
     response = openai.Completion.create(
     model="text-davinci-003",
-    prompt=f"The following is a conversation with an Amazing storytelling AI. The AI is creative and excellent at creating suspenseful, mysterious,  and jaw-dropping stories. His stories always have an amazing twist. The stories are also always long, but intriguing. \n\nHuman: Hello, who are you?\nAI: I tell the most amazing and mysterious stories, what amazing thing would you like to hear about today?\nHuman: {prompt} Make sure it is in the first person and sounds very real and like you just happened to be typing the story. Also make sure it is about and you keep this prompt in mind: \" {title} \".\nAI:",
-    temperature=0.9,
-    max_tokens=3863,
+    prompt=f"The following is a realistic, mysterious, and suspenseful story about {title} with a twist at the end.\n\n{prompt}:",
+    temperature=1.02,
+    max_tokens=3753,
     top_p=1,
-    frequency_penalty=0,
+    frequency_penalty=0.24,
     presence_penalty=0.6,
-    stop=[" Human:", " AI:"]
+    stop=["Story:"]
     )
     
     story = response.choices[0].text

@@ -163,3 +163,8 @@ cython_debug/
 #Env Variables
 
 *env.py
+*credentials
+
+*.mp4
+
+assets/*/
