@@ -32,8 +32,8 @@ def getStory(title, postNum):
     
     prompt = random.choice(prompts)
   
-
-    openai.api_key = env.OPENAI_API_KEY # Replace variable in env.py with your OpenAI API key
+                                        #REMOVE THE REMOVEME and the BRACKETS so that it looks like 'env.py'
+    openai.api_key = env.OPENAI_API_KEY # Replace variable in env[REMOVEME].py with your OpenAI API key
 
     start_sequence = "\nAI:"
     restart_sequence = "\nHuman: "
