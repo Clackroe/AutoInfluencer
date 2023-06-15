@@ -1,1 +1,1 @@
-OPENAI_API_KEY = 'afaff' # Your OpenAI API key 
+OPENAI_API_KEY = '' # Your OpenAI API key 
