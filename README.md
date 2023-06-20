@@ -32,9 +32,9 @@ To use AutoInfluencer, follow these steps:
 3. Set up the necessary API credentials for accessing platforms for uploading.
 4. Configure the project settings, including the desired length and style of the generated stories.
 5. Run the driver.py script to fetch the top posts from AskReddit and generate the stories.
-6. (WIP) Utilize the TTS module to convert the generated stories into audio narration.
-7. (WIP) Add subtitles to the generated stories for enhanced accessibility.
-8. (WIP) Overlay the stories on gameplay footage using video editing software.
+6. Utilize the TTS module to convert the generated stories into audio narration.
+7. Add subtitles to the generated stories for enhanced accessibility.
+8. Overlay the stories on gameplay footage using video editing software.
 9. (WIP) Configure the automatic uploading process to the desired platforms.
 10. (WIP) Schedule the script to run twice a day to ensure regular content generation.
 
