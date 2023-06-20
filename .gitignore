@@ -166,5 +166,8 @@ cython_debug/
 *credentials
 
 *.mp4
+*.srt
+*.mp3
+*.srt
 
 assets/*/

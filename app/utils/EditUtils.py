@@ -1,7 +1,9 @@
 import os
 import random
-from moviepy.editor import VideoFileClip, AudioFileClip, TextClip, CompositeVideoClip, ImageClip
+from moviepy.editor import VideoFileClip, AudioFileClip, TextClip, CompositeVideoClip, ImageClip, CompositeAudioClip
 from moviepy.video.tools.subtitles import SubtitlesClip
+from moviepy.audio.fx import volumex
+from utils.TTSUtils import getTTS
 
 
 def editDaMovie(outputDir, clipDir, inputDir):
@@ -12,10 +14,13 @@ def editDaMovie(outputDir, clipDir, inputDir):
     clipLength = int(gmplyClip.duration)
 
     audio = AudioFileClip(f"{inputDir}/speech.mp3")
+
     audioLength = int(audio.duration)
 
     image = ImageClip(f"{inputDir}/screenshot.png").to_ImageClip().set_start(
         0).set_duration(2).set_position(("center", "center"))
+
+    image = image.resize((gmplyClip.w, (image.h/image.w)*gmplyClip.w))
 
     os.system(f"autosub {inputDir}/speech.mp3")
 
@@ -29,7 +34,11 @@ def editDaMovie(outputDir, clipDir, inputDir):
 
     bgClip = gmplyClip.subclip(int(endPoint - audioLength), endPoint)
 
-    bgClip = bgClip.set_audio(audio)
+    bgClip.volumex(0.5)
+
+    newAudio = CompositeAudioClip([bgClip.audio, audio])
+
+    bgClip = bgClip.set_audio(newAudio)
 
     CompositeVideoClip([bgClip, image, subs]).write_videofile(
         f"{outputDir}/final.mp4", threads=4, fps=24)

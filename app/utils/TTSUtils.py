@@ -7,11 +7,11 @@ session = Session(profile_name="default")
 polly = session.client("polly")
 
 
-def getTTS(text, outputDir, voice="Matthew"):
+def getTTS(text, outputDir, voice="Stephen"):
 
     try:
         response = polly.synthesize_speech(Text=text, OutputFormat="mp3",
-                                           VoiceId=voice)
+                                           VoiceId=voice, Engine="neural")
 
     except (BotoCoreError, ClientError) as error:
         print(error)

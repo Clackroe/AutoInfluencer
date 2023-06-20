@@ -61,12 +61,14 @@ def takeScreenshot(post, subreddit, category, time, outputDir, headless=True):
 
     if not os.path.exists(outputDir):
         print("Directory doesnt exist. Creating directory...")
-        os.mkdirs(outputDir)
+        os.mkdir(outputDir)
 
     options = webdriver.ChromeOptions()
     options.headless = headless
 
     driver = webdriver.Chrome(chrome_options=options)
+    # driver.execute_script(
+    #     "document.body.style['-webkit-transform'] = \"scale(2.0)\";")
     driver.get(f"https://www.reddit.com/r/{subreddit}/{category}/?t={time}")
     postID = getPostID(post)
     element = driver.find_element(By.ID, postID)
@@ -88,7 +90,7 @@ def choosePost(subreddit, category, time):
             num = 0
             break
 
-    with open('utils/data/posts.txt', 'a') as file:
+    with open('utils/data/posts.txt', 'a', encoding="utf-8") as file:
         file.write(f"{titles[num].text}\n")
 
     return titles[num], posts[num]
