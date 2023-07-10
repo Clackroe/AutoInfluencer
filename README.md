@@ -41,13 +41,10 @@ To use AutoInfluencer, follow these steps:
 ## Future Plans
 The future plans for AutoInfluencer include the following enhancements:
 
-1. Integration of text-to-speech (TTS) technology to automatically convert the generated stories into audio narration.
-2. Subtitle generation to improve accessibility and user experience.
-3. Overlaying the generated stories on gameplay footage to create visually appealing content.
-4. Automatic uploading of the generated content to various platforms, such as YouTube Shorts, TikTok, and other social media channels.
-5. Improved customization options for story length, style, and other parameters.
-6. Integration with analytics tools to track and analyze the performance of the generated content.
-7. Implementing an intuitive web interface for managing and modifying the generated stories and other settings.
+1. Automatic uploading of the generated content to various platforms, such as YouTube Shorts, TikTok, and other social media channels.
+2. Improved customization options for story length, style, and other parameters.
+3. Integration with analytics tools to track and analyze the performance of the generated content.
+4. Implementing an intuitive web interface for managing and modifying the generated stories and other settings.
 
 ## Contributing
 Contributions to AutoInfluencer are always welcome. If you want to contribute to the project, please follow these steps:
